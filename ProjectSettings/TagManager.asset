@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Traps
+  - Collectables
+  - Collectables(NinjaStar)
+  - Collectables(Coins)
+  - Collectables(PowerUp=Chilli)
+  - Collectables(PowerUp=GreenChilli)
+  - DeathTraps
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - JumpGround
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Background
+    uniqueID: 2663530251
+    locked: 0
+  - name: Background(Desert Far)
+    uniqueID: 2110360965
+    locked: 0
+  - name: Background(Desert)
+    uniqueID: 553711745
+    locked: 0
+  - name: Collectables
+    uniqueID: 1945909263
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Environment
+    uniqueID: 788316763
+    locked: 0
+  - name: Underground
+    uniqueID: 96534939
+    locked: 0
+  - name: Buildings
+    uniqueID: 1565947357
+    locked: 0
+  - name: Terrain
+    uniqueID: 3352182425
+    locked: 0
