@@ -6,14 +6,17 @@ public class Enemy : MonoBehaviour
 {
 
     public int health = 100;
-    public Animator Animator;
+    private Animator Animator;
     private Rigidbody2D rb;
-    //public GameObject deathEffect;
+    BoxCollider2D bc;
+
+   
 
     private void Start()
     {
         Animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        bc = gameObject.GetComponent<BoxCollider2D>();
     }
 
     public void TakeDamage(int damage)
@@ -28,15 +31,16 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
-        if (GetComponentInParent<EnemyPatrol>() != null)
+       /* if (GetComponentInParent<EnemyPatrol>() != null)
         {
             GetComponentInParent<EnemyPatrol>().enabled = false;
         }
         if (GetComponent<Enemy>() != null)
         {
             GetComponentInParent<Enemy>().enabled = false;
-        }
+        } */
         rb.bodyType = RigidbodyType2D.Static;
+        bc.enabled = false;
         Animator.SetTrigger("Die");
        
     }
