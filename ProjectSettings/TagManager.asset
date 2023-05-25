@@ -11,6 +11,7 @@ TagManager:
   - Collectables(PowerUp=Chilli)
   - Collectables(PowerUp=GreenChilli)
   - DeathTraps
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -19,8 +20,8 @@ TagManager:
   - Water
   - UI
   - JumpGround
-  - 
-  - 
+  - Player
+  - Enemy
   - 
   - 
   - 

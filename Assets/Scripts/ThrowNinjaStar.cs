@@ -23,6 +23,7 @@ public class ThrowNinjaStar : MonoBehaviour
             enemy.TakeDamage(damage);
         }
 
+
         //Instantiate(impactEffect, transform.position, transform.rotation);
 
         Destroy(gameObject);

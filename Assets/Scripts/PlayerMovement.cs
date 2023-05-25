@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float Movespeed = 8f;
     [SerializeField] private float JumpForce = 7f;
     [SerializeField] private LayerMask JumpGround;
+    private bool p_Right = true;
     private enum AnimationStates { idle, running, falling, jumping }
 
     [SerializeField] private AudioSource JumpSound;
@@ -64,15 +65,25 @@ public class PlayerMovement : MonoBehaviour
         AnimationStates state;
 
         //Running Animation
-        if (direction > 0f)
+        if (direction > 0f && !p_Right)
+        {
+            Flip();
+            state = AnimationStates.running;
+            
+        }
+        else if (direction < 0f && p_Right)
+        {
+            Flip();
+            state = AnimationStates.running;
+        }
+        else if (direction > 0f)
         {
             state = AnimationStates.running;
-            sprite.flipX = false;
+
         }
         else if (direction < 0f)
         {
             state = AnimationStates.running;
-            sprite.flipX = true;
         }
         else
         {
@@ -117,6 +128,12 @@ public class PlayerMovement : MonoBehaviour
             StartCoroutine(ResetPower());
         }
 
+    }
+    private void Flip()
+    {
+        // Switch the way the player is labelled as facing.
+        p_Right = !p_Right;
+        transform.Rotate(0f, 180f, 0f);
     }
     private IEnumerator ResetPower()
     {
