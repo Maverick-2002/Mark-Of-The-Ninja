@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7494353463012889701}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: attackpoint
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6880739698999151612}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ThrowPoint
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -88,9 +88,8 @@ GameObject:
   - component: {fileID: 6880739699256246365}
   - component: {fileID: 6880739699256246366}
   - component: {fileID: 6880739699256246367}
-  - component: {fileID: 6880739699256246352}
   - component: {fileID: 2449864614949418536}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ninja
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -278,12 +277,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f3acea6f9439be4c9f50820a9817892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ninjastar: 0
   ninjastarText: {fileID: 0}
   coinsText: {fileID: 0}
-  Animator: {fileID: 0}
+  Animator: {fileID: 4006328919600178874}
   CoinSound: {fileID: 6880739699256246337}
   NinjaStarSound: {fileID: 6880739699256246339}
   HealingSound: {fileID: 6880739699256246364}
+  Throwpoint: {fileID: 6880739698999151612}
+  ThrowpointPrefab: {fileID: 6030089901320202528, guid: ac1fad66c34c15a46ac7c0a6ee48b058, type: 3}
+  StarSound: {fileID: 2449864614949418536}
 --- !u!114 &6880739698706318294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,7 +299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a58147724dae9548af0de53f019f31a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 3
+  startingHealth: 4
   HealthSound: {fileID: 6880739699256246367}
 --- !u!114 &9127906321765339441
 MonoBehaviour:
@@ -317,6 +320,7 @@ MonoBehaviour:
   enemylayers:
     serializedVersion: 2
     m_Bits: 256
+  damage: 40
 --- !u!82 &6880739699256246344
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1085,22 +1089,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &6880739699256246352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6880739699256246351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f7e77278b9486448820a2116f9d1e88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Throwpoint: {fileID: 6880739698999151612}
-  ThrowpointPrefab: {fileID: 6030089901320202528, guid: ac1fad66c34c15a46ac7c0a6ee48b058, type: 3}
-  Animator: {fileID: 4006328919600178874}
-  StarSound: {fileID: 2449864614949418536}
 --- !u!82 &2449864614949418536
 AudioSource:
   m_ObjectHideFlags: 0

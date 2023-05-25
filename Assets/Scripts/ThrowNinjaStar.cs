@@ -7,7 +7,7 @@ public class ThrowNinjaStar : MonoBehaviour
     public float speed = 20f;
     public int damage = 40;
     public Rigidbody2D rb;
-    public GameObject impactEffect;
+    //public GameObject impactEffect;
 
     // Use this for initialization
     void Start()

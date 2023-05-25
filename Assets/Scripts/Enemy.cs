@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     public Animator Animator;
     private Rigidbody2D rb;
     [SerializeField] private AudioSource EnemyDieSound;
+    [SerializeField] private AudioSource EnemyHurtSound;
     //public GameObject deathEffect;
 
     private void Start()
@@ -19,7 +20,9 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        EnemyHurtSound.Play();
         health -= damage;
+        
 
         if (health <= 0)
         {

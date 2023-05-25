@@ -21,6 +21,7 @@ public class TriggerDeath : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         PlayerHealth = GetComponent<Health>();
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -35,8 +36,7 @@ public class TriggerDeath : MonoBehaviour
 
             Die();
         }
-
-        
+       
     }
 
     public void Die()
@@ -48,9 +48,8 @@ public class TriggerDeath : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Static;
     }
 
-    private void RestartLevel()
+   private void RestartLevel()
     {
-        
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
