@@ -6,17 +6,15 @@ public class Enemy : MonoBehaviour
 {
 
     public int health = 100;
-    private Animator Animator;
+    public Animator Animator;
     private Rigidbody2D rb;
-    BoxCollider2D bc;
-
-   
+    [SerializeField] private AudioSource EnemyDieSound;
+    //public GameObject deathEffect;
 
     private void Start()
     {
         Animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        bc = gameObject.GetComponent<BoxCollider2D>();
     }
 
     public void TakeDamage(int damage)
@@ -26,21 +24,22 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             Die();
+            EnemyDieSound.Play();
         }
     }
 
     void Die()
     {
-       /* if (GetComponentInParent<EnemyPatrol>() != null)
+        if (GetComponentInParent<EnemyPatrol>() != null)
         {
             GetComponentInParent<EnemyPatrol>().enabled = false;
         }
         if (GetComponent<Enemy>() != null)
         {
             GetComponentInParent<Enemy>().enabled = false;
-        } */
+        }
+        GetComponent<BoxCollider2D>().enabled = false;
         rb.bodyType = RigidbodyType2D.Static;
-        bc.enabled = false;
         Animator.SetTrigger("Die");
        
     }

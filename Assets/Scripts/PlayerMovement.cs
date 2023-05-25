@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioSource JumpSound;
     [SerializeField] private AudioSource PowerupSound;
     [SerializeField] private AudioSource PowerResetSound;
+    private Vector3 respawnpoint;
 
 
     // Start is called before the first frame update
@@ -28,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
         coll = GetComponent<BoxCollider2D>();
+        respawnpoint = transform.position;
     }
 
     // Update is called once per frame
@@ -126,6 +128,10 @@ public class PlayerMovement : MonoBehaviour
             JumpForce = 7f;
             sprite.color = Color.cyan;
             StartCoroutine(ResetPower());
+        }
+        if (collision.gameObject.CompareTag("Checkpoint"))
+        {
+            transform.position = respawnpoint;
         }
 
     }

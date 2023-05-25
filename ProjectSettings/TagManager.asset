@@ -12,6 +12,7 @@ TagManager:
   - Collectables(PowerUp=GreenChilli)
   - DeathTraps
   - Enemy
+  - Checkpoint
   layers:
   - Default
   - TransparentFX

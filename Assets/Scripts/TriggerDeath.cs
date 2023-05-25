@@ -13,8 +13,7 @@ public class TriggerDeath : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
     private Health PlayerHealth;
-    private int LifeCount = 3 ;
-    [SerializeField] private Text LifecountText;
+    private int LifeCount = 3;
     [SerializeField] private AudioSource DeathSound;
     // Start is called before the first frame update
     void Start()
@@ -51,6 +50,7 @@ public class TriggerDeath : MonoBehaviour
 
     private void RestartLevel()
     {
+        
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
